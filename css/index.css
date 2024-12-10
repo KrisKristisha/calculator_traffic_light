@@ -1,0 +1,645 @@
+#body {
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-stretch: extra-expanded;
+    font-kerning: auto;
+    z-index: 1;
+}
+
+#title_text {
+    width: 70%;
+    height: 2rem;
+    font-size: 1.5rem;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+#background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    opacity: 0.35;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    z-index: -1;
+}
+
+.number {
+    position: absolute;
+    font-size: 0.8rem;
+    z-index: 5;
+    max-width: 20px;
+    width: 20px;
+}
+
+.vertical {
+    writing-mode: vertical-lr;
+    padding: 0;
+}
+
+.relative {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.relative>img {
+    padding: 0;
+    width: 350px;
+    height: 350px;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0.625rem 0.625rem;
+    text-align: center;
+    background-color:rgba(240,255,240,0.3);
+    padding: 1.25rem;
+    color: steelblue;
+    border-radius: 4,6875rem;
+    text-shadow: brown 1px -1px;
+}
+
+#result, #history {
+    display: flex;
+    justify-content: space-around;
+    margin: 2.5rem auto;
+    flex-wrap: wrap;
+}
+
+#history {
+    flex-direction: column;
+}
+
+#history>div{
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#result div {
+    width: 20%;
+    height: 3.125rem;
+    border-radius: 10px;
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    margin: 0.625rem 0.625rem;
+}
+
+#arrows {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0.265rem 3.125rem;
+    min-height: auto;
+    margin: auto;
+}
+
+#arrows>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0.625rem .625rem;
+}
+
+#arrows>div>div {
+    margin: auto 5px;
+}
+
+#lines {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.625rem 3.125rem;
+    min-height: auto;
+    margin: auto;
+}
+
+#lines>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto 2.5rem;
+    width: 9.375rem;
+    height: 12.5rem;
+}
+
+#lines>div>div {
+    display: flex;
+    justify-content: center;
+}
+
+#lines img {
+    border-radius: 1.25rem;
+} 
+
+#phases {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+#phases>div div, #ped_phase {
+    display: flex;
+    max-width: 3.125rem;
+    height: 3.125rem;
+    align-items: normal;
+    flex-wrap: nowrap;
+}
+
+#phase1 img, #phase2 img, #phase3 img {
+    width: 3.125rem;
+    height: 3.125rem;
+}
+
+#phase1 p, #phase2 p, #phase3 p {
+    display: flex;
+    justify-content: space-around;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#common img {
+    opacity: 0.35;
+}
+
+#common img:hover {
+    opacity: 0.55;
+}
+
+#values {
+    display: none;
+}
+
+.input_values, #number_of_phases {
+    height: 1.5rem;
+    width: 5rem;
+    border-radius: 0.2rem;
+    text-align: center;
+    background-color: lightgray;
+    margin: 5px auto;
+}
+
+.sov_pol {
+    padding: 10px auto;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+}
+
+.arrow {
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+
+}
+
+#form_all {
+    display: flex;
+    flex-direction: column;
+}
+
+#submit_button:hover,#get_number_of_phases:hover {
+    background-color: cornflowerblue;
+    border-color: cornflowerblue;
+}
+
+#kol_phaz {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+#get_number_of_phases {
+    width: 12.5rem;
+    margin: 1.25rem 3.125rem;
+    background-color: rgba(100, 148, 237, 0.8);
+    color: aliceblue;
+    height: 1.875rem;
+    border-radius: 0.625rem;
+}
+
+
+
+#ped_phase {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+
+#ped_cross>input {
+    width: 4.375rem;
+    height: 1.25rem;
+}
+
+#common {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.zebra {
+    border-style: dotted;
+}
+
+#middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#center {
+    display: flex;
+    flex-direction: column;
+}
+
+#center img {
+    width: 4.375rem;
+    margin: 1px auto;
+}
+
+#center div {
+    display: flex;
+    justify-content: space-around;
+}
+
+#up {
+    background: url("../static/zebra_hor.png") repeat-x;
+    opacity: 0.05;
+    margin-bottom: 0.625rem;
+    margin: auto 0.5%;
+}
+
+#up:hover {
+    opacity: 0.55;
+}
+
+#down {
+    background: url("../static/zebra_hor.png") repeat-x;
+    opacity: 0.05;
+    margin-top: 0.975rem;
+    margin: auto 1%;
+}
+
+#down:hover {
+    opacity: 0.55;
+}
+
+#left {
+    background: url("../static/zebra_vert.png") repeat;
+    opacity: 0.05;
+    margin-right: 0.625rem;
+
+}
+
+#left:hover{
+    opacity: 0.55;
+}
+
+#right {
+    background: url("../static/zebra_vert.png") repeat;
+    opacity: 0.05;
+    margin-left: 0.625rem;
+
+}
+
+#right:hover{
+    opacity: 0.55;
+}
+
+#phas, #trams {
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    justify-content: space-evenly;
+    margin-top: 10px
+}
+
+#phasis {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 6.25rem;
+}
+
+#visi {
+    display: none;
+}
+
+.phase_title {
+    max-width: 60%;
+    margin: 1.25rem auto;
+    
+}
+
+.num_of_phases_choice {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0.975rem auto 0.975rem 0;
+}
+
+.rotate_north {
+    transform: rotate(270deg);
+}
+
+.rotate_south {
+    transform: rotate(90deg);
+}
+
+.rotate_east {
+    transform: rotate(180deg);
+}
+
+.red {
+    background-color: rgba(255,0,0,0.3);
+}
+
+.green {
+    background-color: rgba(0,255,0,0.3);
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 100%;
+}
+
+#id_body>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 5px auto;
+    font-size: 1.2rem;
+}
+
+#id_body>div div {
+    display:inline-block;
+    justify-content: space-between;
+    margin: 5px auto;
+    font-size: 1.2rem;
+}
+
+label {
+    font-size: 1.5rem;
+}
+
+#image_data {
+    background: url('static/cross.png') no-repeat;
+    transition: "background" 13s ease-out;
+}
+
+.dis {
+    opacity: 0.3
+}
+
+.en {
+    opacity: 1
+}
+
+.phas_img {
+    width: 4rem;
+    height: 4rem;
+}
+
+#tram_checkbox {
+    position: relative;
+    align-self: flex-end;
+}
+
+#trams_body {
+    display: flex;
+    flex-direction: column;
+}
+
+#tram_phase_check {
+    transform: scale(1.5);
+}
+
+.accordion-header button {
+    font-size: 1.625rem;
+    background-color: rgba(71, 61, 139, 0.8);
+    color: white
+}
+
+#zero>div {
+    display: flex;
+    justify-content: center;
+}
+
+#data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 1.2rem;
+}
+
+#image_data {
+    display: flex;
+    justify-content: space-around;
+}
+
+#data_picture {
+    transform: scale(1.5);
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.red {
+    background-color: red;
+}
+
+#pofaz {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#history {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#pofaz>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 30%;
+    margin: 10px auto;
+    font-size: 1.3rem;
+}
+
+#history>div {
+    display: flex;
+    margin: 10px auto;
+    font-size: 1.3rem;
+    min-width: 100%;
+}
+
+.hist_data {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#history img {
+    width: 350px;
+    height: 350px;
+}
+
+#pofaz img, #history img {
+    position: absolute;
+    opacity: 0.5;
+}
+
+.raschet {
+    margin-top: 30px
+}
+
+.output {
+    padding: 0.625rem
+}
+
+.height {
+    height: 21.875rem;
+}
+
+.margin {
+    margin-top: 0.625rem
+}
+
+.accordion-body {
+    flex-wrap: wrap;
+}
+
+#data_picture {
+    width: 18rem;
+    height: auto
+}
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#pofaz h3 {
+    padding: 0
+}
+
+.card {
+    max-width: 22%
+}
+
+.dop_infs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgba(0,0,0,0.06);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.dop_infs div {
+    width: 100%;
+}
+
+.dop_infs>div>label {
+    margin-right: 15px;
+    margin-bottom: 15px;
+    max-width: 50%;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.margin_height {
+    height: 2.25rem;
+    max-width: 50%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.dirs {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.table {
+    display: flex;
+    flex-direction: row;
+}
+
+.pofaz_table {
+    border: 1px solid black;
+    font-size: 0.75rem;
+}
+
+.save_button {
+    margin: 15px 50px auto auto;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    padding: 10px
+}
+
+.save_button:hover {
+    border-style: groove;
+    background-color:rgba(71, 61, 139, 0.8);
+    color: rgba(255,255,255,0.6)
+}
+
+.ped_img {
+    width: 200px;
+    height: 200px;
+}
+
+#lines table img{
+    margin: 20px;
+}
+
+#lines table {
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+    #arrows>div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        margin: 0.625rem 0.625rem;
+    }
+
+}
