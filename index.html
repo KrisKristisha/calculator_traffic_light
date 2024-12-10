@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="css/index.css" rel='stylesheet'>
+    <title>Калькулятор светофорного регулирования</title>
+</head>
+<body onload="onload1()" id="body" class="container">
+    <img id="background" src="static/background.jpg">
+    <form action="js/index.js" method="POST" id="form_all">        
+        <div id="main">
+            <div class="accordion accordion-flush" id="m">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button  id="first_head" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#first" aria-expanded="true" aria-controls="first">
+                            Ввод информации про движение автомобилей
+                        </button>
+                    </h2>
+                    <div class="accordion-collapse collapse show" data-bs-parent="#m" id="first" aria-labelledby="headingOne">
+                        <div id="arrows" class="accordion-body text-center">
+                            <div>
+                                <div id="arrow_north_east" name="1" class="card arrow">
+                                    <img src="static/cross_west_right.png" alt="" class="card-img-top rotate_north" id="north_east_img">
+                                    <div class="card-body">
+                                        <label for="">
+                                            Интенсивность
+                                            <input type="number" class="input_values intens card-text" name="1" min=0>
+                                        </label>
+                                        <label for="">
+                                            Количество полос
+                                            <input type="number" class="input_values roads card-text" name="1" min="0">
+                                        </label>
+                                        <label for="">
+                                            Отдельная полоса
+                                            <input type="checkbox" class="input_values card-text single_checks" name="north_right_check" min="0" id="north_right_check">
+                                        </label>
+                                    </div>
+                                </div>
+                            
+                                <div id="arrow_north_south" name="2" class="arrow card">
+                                    <img src="static/cross_west_tw.png" alt="" class="card-img-top rotate_north" id="north_south_img">
+                                    <div class="card-body">
+                                        <label for="">
+                                            Интенсивность
+                                            <input type="number" class="input_values intens card-text" name="2" min=0>
+                                        </label>
+                                        <label for="">
+                                            Количество полос
+                                            <input type="number" class="input_values roads card-text" name="2" min=0>
+                                        </label>
+                                        <label for="" class="hidden">
+                                            Отдельная полоса
+                                            <input type="checkbox" class="input_values card-text single_checks hidden" min="0">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div id="arrow_north_west" name="3" class="arrow card">
+                                    <img src="static/cross_levo.png" alt="" class="card-img-top rotate_north" id="north_west_img">
+                                    <div class="card-body">
+                                        <label for="">
+                                            Интенсивность
+                                            <input type="number" class="input_values intens card-text" name="3" min=0>
+                                        </label>
+                                        <label for="">
+                                            Количество полос
+                                            <input type="number" class="input_values roads card-text" name="3" min=0 >
+                                        </label>
+                                        <label for="">
+                                            Отдельная полоса
+                                            <input type="checkbox" class="input_values card-text single_checks" name="north_left_check" min="0" id="north_left_check">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div id="arrow_north_west" name="4" class="arrow card">
+                                    <img src="static/cross_razvorot.png" alt="" class="card-img-top rotate_north" id="north_north_img">
+                                    <div class="card-body">
+                                        <label for="">
+                                            Интенсивность
+                                            <input type="number" class="input_values intens card-text" name="4" min=0>
+                                        </label>
+                                        <label for="">
+                                            Количество полос
+                                            <input type="number" class="input_values roads card-text" name="4" min=0>
+                                        </label>
+                                        <label for="" class="hidden">
+                                            Отдельная полоса
+                                            <input type="checkbox" class="input_values card-text single_checks hidden" min="0">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div id="arrow_west_north" name="5" class="arrow card">
+                                    <img src="static/cross_west_right.png" alt="" class="card-img-top" id="west_north_img">
+                                    <div class="card-body">
+                                        <label for="">
+                                            Интенсивность
+                                            <input type="number" class="input_values intens card-text" name="5" min=0>
+                                        </label>
+                                        <label for="">
+                                            Количество полос
+                                            <input type="number" class="input_values roads card-text" name="5" min=0>
+                                        </label>
+                                        <label for="">
+                                            Отдельная полоса
+                                            <input type="checkbox" class="input_values card-text single_checks" name="west_right_check" min="0" id="west_right_check">
+                                        </label>
+                                    </div>
+                                </div>
+                            
+                                <div id="arrow_west_east" name="6" class="arrow card">
+                                    <img src="static/cross_west_tw.png" alt="" class="card-img-top" id="west_east_img">
+                                    <div class="card-body">
+                                        <label for="">
+                                            Интенсивность
+                                            <input type="number" class="input_values intens card-text" name="6" min=0>
+                                        </label>
+                                        <label for="">
+                                            Количество полос
+                                            <input type="number" class="input_values roads card-text" name="6" min=0>
+                                        </label>
+                                        <label for="" class="hidden">
+                                            Отдельная полоса
+                                            <input type="checkbox" class="input_values card-text single_checks hidden" min="0">
+                                        </label>
+                                    </div>
+                                </div>
+                        
+                                <div id="arrow_west_south" name="7" class="arrow card">
+                                    <img src="static/cross_levo.png" alt="" class="card-img-top" id='west_south_img'>
+                                    <div class="card-body">
+                                        <label for="">
+                                            Интенсивность
+                                            <input type="number" class="input_values intens card-text" name="7" min=0>
+                                        </label>
+                                        <label for="">
+                                            Количество полос
+                                            <input type="number" class="input_values roads card-text" name="7" min=0>
+                                        </label>
+                                        <label for="">
+                                            Отдельная полоса
+                                            <input type="checkbox" class="input_values card-text single_checks" name="west_left_check" min="0" id="west_left_check">
+                                        </label>
+                                    </div>
+                                </div> 
+                                <div id="arrow_west_south" name="8" class="arrow card">
+                                    <img src="static/cross_razvorot.png" alt="" class="card-img-top" id='west_west_img'>
+                                    <div class="card-body">
+                                        <label for="">
+                                            Интенсивность
+                                            <input type="number" class="input_values intens card-text" name="8" min=0>
+                                        </label>
+                                        <label for="">
+                                            Количество полос
+                                            <input type="number" class="input_values roads card-text" name="8" min=0>
+                                        </label>
+                                        <label for="" class="hidden">
+                                            Отдельная полоса
+                                            <input type="checkbox" class="input_values card-text single_checks hidden" min="0">
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            <hr>
+                            <div>
+                                <div id="arrow_south_east" name="9" class="arrow card">
+                                    <img src="static/cross_west_right.png" alt="" class="card-img-top rotate_south" id='south_west_img'>
+                                    <div class='card-body'>
+                                        <label for="">
+                                            Интенсивность
+                                            <input type="number" class="input_values intens card-text" name="9" min=0>
+                                        </label>
+                                        <label for="">
+                                            Количество полос
+                                            <input type="number" class="input_values roads card-text" name="9" min=0>
+                                        </label>
+                                        <label for="">
+                                            Отдельная полоса
+                                            <input type="checkbox" class="input_values card-text single_checks" name="south_right_check" min="0" id="south_right_check">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div id="arrow_south_north" name="10" class="arrow card">
+                                    <img src="static/cross_west_tw.png" alt="" class="card-img-top rotate_south" id='south_north_img'>
+                                    <div class="card-body">
+                                        <label for="">
+                                            Интенсивность
+                                            <input type="number" class="input_values intens card-text" name="10" min=0>
+                                        </label>
+                                        <label for="">
+                                            Количество полос
+                                            <input type="number" class="input_values roads card-text" name="10" min=0>
+                                        </label>
+                                        <label for="" class="hidden">
+                                            Отдельная полоса
+                                            <input type="checkbox" class="input_values card-text single_checks hidden" min="0">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div id="arrow_south_west" name="11" class="arrow card">
+                                    <img src="static/cross_levo.png" alt="" class="card-img-top rotate_south" id='south_east_img'>
+                                    <div class="card-body">
+                                        <label for="">
+                                            Интенсивность
+                                            <input type="number" class="input_values intens card-text" name="11" min=0>
+                                        </label>
+                                        <label for="">
+                                            Количество полос
+                                            <input type="number" class="input_values roads card-text" name="11" min=0>
+                                        </label>
+                                        <label for="">
+                                            Отдельная полоса
+                                            <input type="checkbox" class="input_values card-text single_checks" name="south_left_check" min="0" id="south_left_check">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div id="arrow_south_west" name="12" class="arrow card">
+                                    <img src="static/cross_razvorot.png" alt="" class="card-img-top rotate_south" id='south_south_img'>
+                                    <div class="card-body">
+                                        <label for="">
+                                            Интенсивность
+                                            <input type="number" class="input_values intens card-text" name="12" min=0>
+                                        </label>
+                                        <label for="">
+                                            Количество полос
+                                            <input type="number" class="input_values roads card-text" name="12" min=0>
+                                        </label>
+                                        <label for="" class="hidden">
+                                            Отдельная полоса
+                                            <input type="checkbox" class="input_values card-text single_checks hidden" min="0">
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            <hr>
+                            <div>
+                                <div id="arrow_east_south" name="13" class="arrow card">
+                                    <img src="static/cross_west_right.png" alt="" class="card-img-top rotate_east" id='east_south_img'>
+                                    <div class="card-body">
+                                        <label for="">
+                                            Интенсивность
+                                            <input type="number" class="input_values intens card-text" name="13" min=0>
+                                        </label>
+                                        <label for="">
+                                            Количество полос
+                                            <input type="number" class="input_values roads card-text" name="13" min=0>
+                                        </label>
+                                        <label for="">
+                                            Отдельная полоса
+                                            <input type="checkbox" class="input_values card-text single_checks" name="east_right_check" min="0" id="east_right_check">
+                                        </label>
+                                    </div>
+                                    
+                                </div>
+                                <div id="arrow_east_west" name="14" class="arrow card">
+                                     <img src="static/cross_west_tw.png" alt="" class="card-img-top rotate_east" id='east_west_img'>
+                                    <div class="card-body">
+                                        <label for="">
+                                            Интенсивность
+                                            <input type="number" class="input_values intens card-text" name="14" min=0>
+                                        </label>
+                                        <label for="">
+                                            Количество полос
+                                            <input type="number" class="input_values roads card-text" name="14" min=0>
+                                        </label>
+                                        <label for="" class="hidden">
+                                            Отдельная полоса
+                                            <input type="checkbox" class="input_values card-text single_checks hidden" min="0">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div id="arrow_east_north" name="15" class="arrow card">
+                                    <img src="static/cross_levo.png" alt="" class="card-img-top rotate_east" id='east_north_img'>
+                                    <div class="card-body">
+                                        <label for="">
+                                            Интенсивность
+                                            <input type="number" class="input_values intens card-text" name="15" min=0>
+                                        </label>
+                                        <label for="">
+                                            Количество полос
+                                            <input type="number" class="input_values roads card-text" name="15" min=0>
+                                        </label>
+                                        <label for="">
+                                            Отдельная полоса
+                                            <input type="checkbox" class="input_values card-text single_checks" name="east_left_check" min="0" id="east_left_check">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div id="arrow_east_north" name="16" class="arrow card">
+                                    <img src="static/cross_razvorot.png" alt="" class="card-img-top rotate_east" id='east_east_img'>
+                                    <div class="card-body">
+                                        <label for="">
+                                            Интенсивность
+                                            <input type="number" class="input_values intens card-text" name="16" min=0>
+                                        </label>
+                                        <label for="">
+                                            Количество полос
+                                            <input type="number" class="input_values roads card-text" name="16" min=0>
+                                        </label>
+                                        <label for="" class="hidden">
+                                            Отдельная полоса
+                                            <input type="checkbox" class="input_values card-text single_checks hidden" min="0">
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>        
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button id="second_head" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#second" aria-expanded="false" aria-controls="second">
+                            Параметры пешеходных переходов
+                        </button>
+                    </h2>
+                    <div class="accordion-collapse collapse" data-bs-parent="#m" id="second" aria-labelledby="headingTwo">     
+                        <div id="lines" class="accordion-body">
+                            <table>
+                                <tr>
+                                    <td></td>
+                                    <td><img src="static/left_line.png" alt="" class="ped_img"></td>
+                                    <td><img src="static/top_line.png" alt="" class="ped_img"></td>
+                                    <td><img src="static/right_line.png" alt="" class="ped_img"></td>
+                                    <td><img src="static/bottom_line.png" alt="" class="ped_img"></td>
+                                </tr>
+                                <tr>
+                                    <td><p>Длина, м</p></td>
+                                    <td><input type="number" class="input_values lines" name="20" min=0 value="20" /></td>
+                                    <td><input type="number" class="input_values lines" name="17" min=0 value="20" /></td>
+                                    <td><input type="number" class="input_values lines" name="18" min=0 value="20" /></td>
+                                    <td><input type="number" class="input_values lines" name="19" min=0 value="20" /></td>
+                                </tr>
+                                <tr>
+                                    <td><p>Интенсивность, чел/ч</p></td>
+                                    <td><input type="number" class="input_values ped_intens" name="4" min=0/></td>
+                                    <td><input type="number" class="input_values ped_intens" name="1" min=0/></td>
+                                    <td><input type="number" class="input_values ped_intens" name="2" min=0/></td>
+                                    <td><input type="number" class="input_values ped_intens" name="3" min=0/></td>
+                                </tr>
+                            </table>
+                            
+                        </div>
+                    </div>
+                </div>      
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button id="third_head" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#third" aria-expanded="false" aria-controls="third">
+                            Ввод информации по направлениям движения в каждой фазе
+                        </button>
+                    </h2>
+                    <div class="accordion-collapse collapse" data-bs-parent="#m" id="third" aria-labelledby="headingThree">
+                        <div id="kol_phaz" class="accordion-body">
+                            <div class="num_of_phases_choice">
+                                <h3>Введите количество фаз движения</h3>
+                                <input type="number" id="number_of_phases" min="2">
+                            </div>
+                            
+                            <h3 id="visi">Обозначьте направления движения в каждой фазе</h3>
+                            <div id="phasis">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button id="fourth_head" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fourth" aria-expanded="false" aria-controls="fourth">
+                            Ввод информации по направлениям движения трамваев&nbsp;
+                        
+                        </button>
+                    </h2>
+                    <div class="accordion-collapse collapse" data-bs-parent="#m" id="fourth" aria-labelledby="headingFour">
+                        <div class="accordion-body" id="trams_body">
+                            <div id="trams"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button  id="zero_head" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#zero" aria-expanded="false" aria-controls="zero">
+                            Дополнительная информация
+                        </button>
+                    </h2>
+                    <div class="accordion-collapse collapse" data-bs-parent="#m" data-parent="#m" id="zero" aria-labelledby="headingFive">
+                        <div id="data" class="container text-center accordion-body">
+                            <div class="row" id="id_body">
+                                <div class="col">
+                                    <div class="row data_enter">
+                                        <div class="col" >
+                                            <label for="title data_enter" >
+                                                Название перекрестка
+                                            </label>
+                                        <div class="col">
+                                            <input type="text" id="title" placeholder="Введите название перекрестка">
+                                        </div>
+                                    </div>
+                                    <div class="row data_enter">
+                                        <div class="col">
+                                            <label for="v_train data_enter" >
+                                                Скорость трамвая, км/ч
+                                            </label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="number" class="input_values card-text data_enter" name="v_train" value="25">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="row data_enter" name="w">
+                                        <div class="col">
+                                            <label for="w" >
+                                                Расстояние от пешеходного перехода до пересечения проезжей части, м
+                                                
+                                            </label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="number" class="input_values card-text data_enter" name="w" value="3">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="b" class="data_enter" name="b">
+                                                Расстояние от пересечения до пешеходного перехода, м
+                                            
+                                            </label></div>
+                                        <div class="col">
+                                            <input type="number" class="input_values card-text data_enter" name="b" value="3">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"> 
+                                            <label for="road_width" class="data_enter" name="road_width">
+                                                Ширина полосы, м    
+                                        </label></div>
+                                        <div class="col">
+                                            <select name="road_width" class="input_values card-text data_enter">
+                                                <option value="0">3</option>
+                                                <option value="1">3.5</option>
+                                                <option value="2">3.75</option>
+                                                <option value="3">4.2</option>
+                                                <option value="4">4.8</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="d" class="data_enter" name="d">
+                                                Ширина пешеходного перехода, м
+                                        </label></div>
+                                        <div class="col">
+                                            <input type="number" class="input_values card-text data_enter" name="d" value="4">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="g" class="data_enter" name="g">
+                                                Расстояние от стоп линии до пешеходного перехода, м
+                                            </label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="number" class="input_values card-text data_enter" name="g" value="1">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <label  for="tram_phase_check">
+                                                Количество правоповоротных машин в потоке, %
+                                            </label>
+                                        </div>
+                                        <div class="col">
+                                            <input id="Prt" type="number" class="input_values card-text data_enter" name="Prt" value=5>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="tram_phase_check">
+                                                Количество левоповоротных машин в потоке, %
+                                            </label>
+                                        </div>
+                                        <div class="col">
+                                            <input id="Plt" type="number" class="input_values card-text data_enter" name="Plt" value=5>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <label id="tram_checkbox" for="tram_phase_check">
+                                                Движение трамваев осуществляется в отдельной фазе
+                                            </label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="checkbox" id="tram_phase_check">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row data_enter">
+                                        <div class="col">
+                                            <label for="promtact_yellow data_enter">
+                                                Желтый мигающий (промтакт), сек
+                                            </label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="number" class="input_values card-text data_enter" name="promtact_yellow" value="3" min="0">
+                                        </div>
+                                    </div>
+                                    <div class="row data_enter">
+                                        <div class="col">
+                                            <label for="promtact_yellow data_enter">
+                                                Красный (промтакт), сек
+                                            </label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="number" class="input_values card-text data_enter" name="promtact_red" value="3" min="0">
+                                        </div>
+                                    </div>
+
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col"></th>
+                                                <th scope="col">С севера</th>
+                                                <th scope="col">С востока</th>
+                                                <th scope="col">С юга</th>
+                                                <th scope="col">С запада</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Количество автобусных остановок, расположенных не дальше 70 метров от перекрестка</th>
+                                                <td><input type="number" min = 0 id="bus_amount_north" class='margin_height'></td>
+                                                <td><input type="number" min = 0 id="bus_amount_west" class='margin_height'></td>
+                                                <td><input type="number" id="bus_amount_south" min = 0 class='margin_height'></td>
+                                                <td><input type="number" min = 0 id="bus_amount_east" class='margin_height'></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Количество маневров, связанных с паркированием</th>
+                                                <td><input type="number" min = 0  id="parking_amount_north" class='margin_height'></td>
+                                                <td><input type="number" min = 0 id="parking_amount_west" class='margin_height'></td>
+                                                <td><input type="number" id="parking_amount_south" min = 0 class='margin_height'></td>
+                                                <td><input type="number" min = 0 id="parking_amount_east" class='margin_height'></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Продольный уклон, градусы</th>
+                                                <td><input type="number" id="uklon_north" min = -6  class='col margin_height'></td>
+                                                <td><input type="number" id="uklon_west" min = -6 class='col margin_height'></td>
+                                                <td><input type="number" id="uklon_south" min = -6  class='col margin_height'></td>
+                                                <td><input type="number" id="uklon_east" min = -6  class='col margin_height'></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                       
+                                    
+                                </div>
+                                <div class="col" id="image_data"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingResult">
+                        <button id="result_head" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#result_item" aria-expanded="false" aria-controls="result_item">
+                            Результат
+                        </button>
+                    </h2>
+                    <div class="accordion-collapse collapse" data-bs-parent="#m" id="result_item" aria-labelledby="headingResult">
+                        <div id="pofaz" class="container text-center accordion-body">
+                                
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingHistory">
+                        <button id="history_head" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#history_item" aria-expanded="false" aria-controls="history_item">
+                            История
+                        </button>
+                    </h2>
+                    <div class="accordion-collapse collapse" data-bs-parent="#m" id="history_item" aria-labelledby="headingHistory">
+                        <div id="history" class="container text-center accordion-body">
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+   
+        </div>
+        
+    </form>
+
+
+</body>
+</html>
